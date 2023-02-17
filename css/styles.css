@@ -90,7 +90,7 @@ button {
 .card-title {
   display: flex;
   flex-direction: column;
-  padding: 32px 0;
+  padding: 32px 16px;
 }
 
 .display-flex {
@@ -124,7 +124,23 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   max-width: 264px;
+  margin-bottom: 8px;
 }
+
+.icon-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.icon-background {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
 /* =============== /COMPONENTS =============== */
 
 /* =============== HEADER =============== */
@@ -187,10 +203,16 @@ button {
 }
 
 .hero {
-  background-color: var(--dark-color);
-  border: 1px solid #000;
   padding-top: 188px;
   padding-bottom: 188px;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/background-hero-people-office.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 .hero-main-title {
@@ -208,13 +230,13 @@ button {
   color: var(--light-text-color);
   letter-spacing: 0.04em;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border: 1px solid #000;
+  border: none;
   padding: 16px 32px;
   border-radius: 4px;
 }
 
 .hero-button:hover,
-.hero-button:active {
+.hero-button:focus {
   background-color: var(--pressed-state-color);
 }
 
@@ -224,6 +246,18 @@ button {
 /* =============== /HERO =============== */
 
 /* =============== OUR QUALITIES =============== */
+.our-qua-list-icon-container {
+  width: 264px;
+  height: 112px;
+  padding: 24px 100px;
+  border-radius: 4px;
+  background-color: var(--light-color);
+}
+
+.our-qua-list-icon {
+  --color1: currentColor;
+  --color2: var(--primary-brand-color);
+}
 
 /* =============== /OUR QUALITIES =============== */
 
@@ -248,20 +282,63 @@ button {
 
 .team-list-item {
   width: calc((100% - 72px) / 4);
+  background-color: #ffffff;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
-}
-
-.team-list-item {
-  background-color: #ffffff;
 }
 
 .team-list-card-title {
   align-items: center;
 }
 
+.team-list-card_social-list-link {
+  padding: 12px;
+  background-color: var(--primary-brand-color);
+}
+
+.team-list-card_social-list-icon {
+  fill: var(--light-text-color);
+}
+
+.team-list-card_social-list-link:hover,
+.team-list-card_social-list-link:focus {
+  background-color: var(--pressed-state-color);
+}
+
 /* =============== /OUR TEAM =============== */
+
+/* =============== CUSTOMERS =============== */
+
+.customers-section {
+  padding-top: 130px;
+}
+
+.customers-title {
+  margin-bottom: 72px;
+}
+
+.customers-list-link {
+  display: flex;
+  width: 168px;
+  height: 88px;
+  padding: 16px 32px;
+  border: 1px solid var(--subtle-text-color);
+  border-radius: 4px;
+  color: var(--subtle-text-color);
+}
+
+.customers-list-link:hover,
+.customers-list-link:focus {
+  color: var(--pressed-state-color);
+  border-color: var(--pressed-state-color);
+}
+
+.customers-list-icon {
+  fill: currentColor;
+}
+
+/* =============== /CUSTOMERS =============== */
 
 /* =============== FOOTER =============== */
 .footer {
@@ -275,16 +352,44 @@ button {
 
 .footer-container {
   display: flex;
-  flex-direction: column;
+}
+
+.footer-about-container {
+  margin-right: 120px;
 }
 
 .logo-light {
+  display: inline-block;
   margin-bottom: 16px;
 }
 
-.footer-paragraph {
+.footer-about-paragraph {
   color: var(--accent-color);
 }
+
+.footer-social-paragraph {
+  color: var(--light-text-color);
+  margin-bottom: 16px;
+}
+
+.footer-social-list {
+  gap: 16px;
+}
+
+.footer-social-list-link {
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-social-list-link:hover,
+.footer-social-list-link:focus {
+  background-color: var(--success-color);
+}
+
+.footer-social-list-icon {
+  fill: var(--light-text-color);
+}
+
 /* =============== /FOOTER =============== */
 
 /* =============== PORTFOLIO =============== */
@@ -332,7 +437,6 @@ button {
 }
 
 .portfolio-card {
-  padding-left: 16px;
   border-right: 1px solid #e7e9fc;
   border-bottom: 1px solid #e7e9fc;
   border-left: 1px solid #e7e9fc;
